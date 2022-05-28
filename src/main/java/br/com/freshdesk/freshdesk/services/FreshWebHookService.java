@@ -20,6 +20,19 @@ public class FreshWebHookService {
 		
 		FreshWebHook entity = new FreshWebHook();
 		
+		
+		copyDtoToEntity(entity, dto);
+		
+		entity = repository.save(entity);
+		
+		return new FreshWebHookDTO(entity);
+	}
+	
+	
+	
+	
+	private void copyDtoToEntity(FreshWebHook entity, WebHookDTO dto ) {
+		
 		entity.setTicketId(dto.getFreshWebHookDto().getTicketId());
 		entity.setTicketSubject(dto.getFreshWebHookDto().getTicketSubject());
 		entity.setTicketUrl(dto.getFreshWebHookDto().getTicketUrl());
@@ -34,8 +47,6 @@ public class FreshWebHookService {
 		entity.setTicketSource(dto.getFreshWebHookDto().getTicketSource());
 		
 		
-		entity = repository.save(entity);
-		
-		return new FreshWebHookDTO(entity);
 	}
+	
 }

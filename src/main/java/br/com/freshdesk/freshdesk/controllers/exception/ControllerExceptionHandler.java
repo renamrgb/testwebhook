@@ -20,6 +20,7 @@ public class ControllerExceptionHandler {
 		HttpStatus status = HttpStatus.UNPROCESSABLE_ENTITY;
 		StandardError err = new StandardError();
 		err.setError("Violação de integridade");
+		//err.setMessage(e.toString());
 		err.setMessage("Já existe um cadastro com esse ticket_id");
 		err.setStatus(status.value());
 
