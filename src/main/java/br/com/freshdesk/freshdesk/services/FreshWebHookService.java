@@ -19,7 +19,7 @@ public class FreshWebHookService {
 	public FreshWebHookDTO insert (WebHookDTO dto) {
 		
 		FreshWebHook entity = new FreshWebHook();
-		
+		entity.setTicketId(dto.getFreshWebHookDto().getTicketId());
 		
 		copyDtoToEntity(entity, dto);
 		
@@ -33,7 +33,6 @@ public class FreshWebHookService {
 	
 	private void copyDtoToEntity(FreshWebHook entity, WebHookDTO dto ) {
 		
-		entity.setTicketId(dto.getFreshWebHookDto().getTicketId());
 		entity.setTicketSubject(dto.getFreshWebHookDto().getTicketSubject());
 		entity.setTicketUrl(dto.getFreshWebHookDto().getTicketUrl());
 		entity.setTicketLatestPrivateComment(dto.getFreshWebHookDto().getTicketLatestPrivateComment());
@@ -45,7 +44,6 @@ public class FreshWebHookService {
 		entity.setTicketCompanyName(dto.getFreshWebHookDto().getTicketCompanyName());
 		entity.setTicketContactEmail(dto.getFreshWebHookDto().getTicketContactEmail());
 		entity.setTicketSource(dto.getFreshWebHookDto().getTicketSource());
-		
 		
 	}
 	
