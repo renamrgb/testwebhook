@@ -28,9 +28,7 @@ public class FreshWebHookService {
 		return new FreshWebHookDTO(entity);
 	}
 	
-	
-	
-	
+
 	private void copyDtoToEntity(FreshWebHook entity, WebHookDTO dto ) {
 		
 		entity.setTicketSubject(dto.getFreshWebHookDto().getTicketSubject());
